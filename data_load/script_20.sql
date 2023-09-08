@@ -1,11 +1,13 @@
 INSERT INTO pf_etf (
-    title,
+    name,
     isin,
-    ticker
+    ticker,
+    index
 ) VALUES (
     'iShares Core MSCI World UCITS ETF USD (Acc)',
     'IE00B4L5Y983',
-    'SWDA'
+    'SWDA',
+    (select id from pf_index where name = 'MSCI World Index (USD)')
 );
 
 commit;

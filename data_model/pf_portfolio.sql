@@ -6,7 +6,8 @@ drop table pf_portfolio;
 
 create table pf_portfolio (
     id              number(10)      not null,
-    description     varchar2(100)   not null,
+    name            varchar2(100)   not null,
+    description     varchar2(500)   not null,
     created         timestamp(3)    not null,
     updated         timestamp(3)    not null
 );

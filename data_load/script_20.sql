@@ -2,7 +2,7 @@ INSERT INTO pf_etf (
     name,
     isin,
     ticker,
-    index
+    index_id
 ) VALUES (
     'iShares Core MSCI World UCITS ETF USD (Acc)',
     'IE00B4L5Y983',

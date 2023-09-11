@@ -2,12 +2,16 @@ drop sequence pf_index_seq;
 
 create sequence pf_index_seq nocache;
 
-drop table pf_index;
+drop table pf_index cascade constraints;
 
 create table pf_index (
     id              number(10)      not null,
+    label           varchar2(100)   not null,
     name            varchar2(100)   not null,
     description     varchar2(400)   not null,
+    constituents    number(8)       not null,
+    factsheet       blob,
+    last_update     date            not null,
     created         timestamp(3)    not null,
     updated         timestamp(3)    not null
 );
@@ -18,7 +22,8 @@ alter table pf_index
 alter table pf_index
     add constraint pf_index_pk primary key (id);
 
-create unique index pf_index_idx_01 on pf_index (name);
+create unique index pf_index_idx_01 on pf_index (label);
+create unique index pf_index_idx_02 on pf_index (name);
     
 create or replace trigger pf_index_trg_01
     before insert or update 

@@ -12,4 +12,6 @@ CREATE OR REPLACE VIEW pf_app_v AS
                 1                                                                  AS sequence
             FROM
                 dual
-        ) x;
+        ) x
+    ORDER BY
+        x.sequence ASC;

@@ -32,4 +32,20 @@ INSERT INTO pf_etf (
     to_date('30-05-2014', 'dd-mm-yyyy')
 );
 
+INSERT INTO pf_etf (
+    name,
+    isin,
+    ticker,
+    index_id,
+    total_expense_ratio,
+    listing_date 
+) VALUES (
+    'iShares Core MSCI Europe UCITS ETF EUR (Acc)',
+    'IE00B4K48X80',
+    'SMEA',
+    (select id from pf_index where label = 'msci-europe'),
+    0.12,
+    to_date('25-09-2009', 'dd-mm-yyyy')
+);
+
 commit;

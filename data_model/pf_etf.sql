@@ -2,16 +2,18 @@ drop sequence pf_etf_seq;
 
 create sequence pf_etf_seq nocache;
 
-drop table pf_etf;
+drop table pf_etf cascade constraints;
 
 create table pf_etf (
-    id          number(10)      not null,
-    name        varchar2(100)   not null,
-    isin        varchar2(12)    not null,
-    ticker      varchar2(4)     not null,
-    index_id    number(10)      not null,
-    created     timestamp(3)    not null,
-    updated     timestamp(3)    not null
+    id                      number(10)      not null,
+    name                    varchar2(100)   not null,
+    isin                    varchar2(12)    not null,
+    ticker                  varchar2(10)    not null,
+    index_id                number(10)      not null,
+    total_expense_ratio     number(4, 2)    not null,
+    listing_date            date            not null,
+    created                 timestamp(3)    not null,
+    updated                 timestamp(3)    not null
 );
 
 alter table pf_etf
@@ -27,6 +29,7 @@ alter table pf_etf
 
 create index pf_etf_idx_01 on pf_etf (isin);
 create index pf_etf_idx_02 on pf_etf (ticker);
+create index pf_etf_idx_03 on pf_etf (index_id);
     
 create or replace trigger pf_etf_trg_01
     before insert or update 

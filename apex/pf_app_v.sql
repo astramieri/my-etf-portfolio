@@ -1,11 +1,11 @@
 CREATE OR REPLACE VIEW pf_app_v
 AS
       SELECT x.*
-        FROM (SELECT 'Portfolio'
+        FROM (SELECT 'Portfolios'
                          AS title,
-                     q'[Collection of ETFs for diversified investment]'
+                     q'[Collection of assets for diversified investment]'
                          AS subtitle,
-                     q'[Portfolios are managed with the aim of optimizing returns while considering the individual's risk tolerance and investment horizon.]'
+                     q'[Mix of different types of assets with the aim of balancing risk and return]'
                          AS body,
                      'fa fa-pie-chart u-color-11'
                          AS icon,
@@ -19,7 +19,7 @@ AS
                          AS title,
                      q'[Exchange-Traded Funds]'
                          AS subtitle,
-                     q'[Exchange-traded index fund that tracks the performance of well-known market indices one-to-one.]'
+                     q'[Exchange-traded index fund that tracks the performance of market indices one-to-one.]'
                          AS body,
                      'fa fa-stock-chart u-color-7'
                          AS icon,

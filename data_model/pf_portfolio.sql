@@ -17,6 +17,8 @@ alter table pf_portfolio
 
 alter table pf_portfolio
     add constraint pf_portfolio_pk primary key (id);
+
+create index pf_portfolio_idx_01 on pf_portfolio (name);
     
 create or replace trigger pf_portfolio_trg_01
     before insert or update 
